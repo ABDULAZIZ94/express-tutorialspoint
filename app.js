@@ -16,5 +16,7 @@ app.set('views','./views');
     user: null
   });
 });
-
+app.get('/components', function(req, res){
+  res.render('content');
+});
 app.listen(port, host,() => console.log(`Example app listening at http://${host}:${port}`))
