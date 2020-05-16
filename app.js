@@ -13,7 +13,7 @@ app.set('views','./views');
  });
  app.get('/dynamic_view', function(req, res){
   res.render('dynamic',{
-    user: {name: "Ayus", age: "20"}
+    user: null
   });
 });
 
