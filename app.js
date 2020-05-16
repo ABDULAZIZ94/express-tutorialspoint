@@ -5,7 +5,7 @@ const host = '0.0.0.0'
 
 app.set('view engine', 'pug');
 app.set('views','./views');
-
+app.use(express.static('public'));
  //Route handler
  app.get('/', function(req, res, next){
     res.render('index');
