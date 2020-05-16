@@ -1,11 +1,13 @@
 const express = require('express')
-var bodyParser = require('body-parser')
-var multer = require('multer');
-var upload = multer();
+const bodyParser = require('body-parser')
+const multer = require('multer');
+const cookieParser = require('cookie-parser');
+const upload = multer();
 const app = express()
 const port = 80
 const host = '0.0.0.0'
 
+app.use(cookieParser());
 app.set('view engine', 'pug');
 app.set('views','./views');
 app.use(express.static('public'));
@@ -16,20 +18,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // for parsing multipart/form-data
 app.use(upload.array()); 
  //Route handler
- app.get('/', function(req, res, next){
-    res.render('index');
-    next();
- });
- app.get('/dynamic_view', function(req, res){
-  res.render('dynamic',{
-    user: null
+ app.get('/', function(req, res){
+  // res.cookie('name', 'express').send('cookie set'); //Sets name = express
+  // res.cookie('name', 'value', {expire: 360000 + Date.now()});
+  res.cookie('style', 'hard', {maxAge: 360000}).send('cookie set');
   });
-});
-app.get('/components', function(req, res){
-  res.render('content');
-});
-app.post('/', function(req, res){
-  console.log(JSON.stringify(req.body));
-  res.send("recieved your request!");
-});
+  app.get('/clear_cookie', function(req, res){
+    res.clearCookie('name');
+    res.send('cookie name cleared');
+ });
 app.listen(port, host,() => console.log(`Example app listening at http://${host}:${port}`))

@@ -7,3 +7,5 @@
 # form data dependency
     npm install --save body-parser multer
 
+# cookies
+    npm install --save cookie-parser
