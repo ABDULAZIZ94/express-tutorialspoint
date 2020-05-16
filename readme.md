@@ -9,3 +9,6 @@
 
 # cookies
     npm install --save cookie-parser
+
+# session
+    npm install --save express-session
