@@ -12,9 +12,9 @@ app.set('views','./views');
     next();
  });
  app.get('/dynamic_view', function(req, res){
-  res.render('dynamic', {
-     name: "TutorialsPoint", 
-     url:"http://www.tutorialspoint.com"
+  res.render('dynamic',{
+    user: {name: "Ayus", age: "20"}
   });
 });
+
 app.listen(port, host,() => console.log(`Example app listening at http://${host}:${port}`))
