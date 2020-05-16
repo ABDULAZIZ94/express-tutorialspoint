@@ -2,8 +2,39 @@ doctype html
 html
    head
       title="Hello Pug"
+      link(
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.0/css/bootstrap.min.css"
+         integrity="sha256-NJWeQ+bs82iAeoT5Ktmqbi3NXwxcHlfaVejzJI2dklU="
+         crossorigin="anonymous"
+      )
    body
       p.greetings#people Hello World!
 
       h3 Testing static file serving:
-      img(src = "images/serve.jpg", alt = "Testing Image")
+      img(src = "images/serve.jpg", alt = "Testing Image") 
+      br
+      br
+      a.btn.btn-default Default
+
+      a.btn.btn-primary( href="link.htm" ) Primary
+
+      a.btn.btn-success Success
+
+      a.btn.btn-info Info
+
+      a.btn.btn-warning Warning
+
+      a.btn.btn-danger Danger
+   
+   script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"
+      integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+      crossorigin="anonymous"
+   )
+   script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js" integrity="sha256-pS96pU17yq+gVu4KBQJi38VpSuKN7otMrDQprzf/DWY=" crossorigin="anonymous")
+   script(
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"
+      integrity="sha256-DiWJXXyq81WlPRnDfGmgYZj2aOVCKyEdJ1l+2TmDuAs="
+      crossorigin="anonymous"
+   )
